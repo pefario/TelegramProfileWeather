@@ -1,4 +1,5 @@
 from pyowm import OWM
+from pytz import timezone
 from datetime import datetime
 from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
@@ -26,7 +27,7 @@ async def update_description():
         weather = observation.weather
         description = f'Сейчас в Екатеринбурге {weather.temperature("celsius")["temp"]} '
 
-        current_time = datetime.now()
+        current_time = datetime.now(timezone('Asia/Yekaterinburg'))
         if current_time.hour <= 6 or current_time.hour >= 22:
             description += '🌙'
         else:
