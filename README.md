@@ -19,4 +19,4 @@
 
 `docker build -t TelegramProfileWeather .`
 
-`docker run TelegramProfileWeather`
+`docker run telegram_profile_weather`
